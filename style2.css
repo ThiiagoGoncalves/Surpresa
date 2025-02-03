@@ -1,0 +1,154 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4d4d;
+    font-size: 50px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+h1:hover {
+    color: #ff1a1a; 
+}
+.container {
+    position: relative;
+    max-width: 90%;
+    max-width: 300px;
+    margin: auto;
+}
+.card {
+    display: none;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.card img {
+    width: 100%;  
+    max-height: 800px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #ff1a1a; 
+}
+.btn-left {
+    left: -40px;
+}
+.btn-right {
+    right: -40px;
+}
+.music-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+    opacity: 0;
+    animation-name: float, fadeIn;
+    animation-duration: 5s, 0.5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-delay: 0s, 2s;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        max-width: 95%;
+    }
+    .card img {
+        width: 100%;
+        max-height: 100%;
+    }
+    .btn {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+.special-card {
+    background-color: #fff1f1;
+    border: 2px dashed #ff4d4d;
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 700px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.special-card:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+
+.special-card p {
+    line-height: 1.6;
+    margin: 0; 
+}
+.special-card .signature {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center; 
+}
+
+
+

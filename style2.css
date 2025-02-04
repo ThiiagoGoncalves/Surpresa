@@ -119,23 +119,21 @@ h1:hover {
     }
 }
 .special-card {
+    font-family: 'Dancing Script', cursive;
     background-color: #fff1f1;
     border: 2px dashed #ff4d4d;
     padding: 15px;
-    font-size: 18px;
+    font-size: 19px;
     color: #333;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
     text-align: center;
     width: 700px;
     position: absolute;
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.special-card:hover {
-    transform: translate(-50%, -50%) scale(1.05);
+    
 }
 
 
@@ -143,12 +141,28 @@ h1:hover {
     line-height: 1.6;
     margin: 0; 
 }
+
 .special-card .signature {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 30px;
-    text-align: center; 
 }
 
 
+.special-card:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+}
+
+.music-btn {
+    background: linear-gradient(45deg, #ff4d4d, #ff9999);
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+.music-btn:hover {
+    transform: scale(1.1);
+}
 

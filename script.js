@@ -1,31 +1,33 @@
-
 let index = 0;
 const slides = document.querySelectorAll('.card');
-const lastSlideIndex = slides.length - 1; 
-slides[index].style.display = 'block';
+const lastSlideIndex = slides.length - 1;
+const intervalTime = 5000; 
 
 function updateSlide() {
     slides.forEach(slide => slide.style.display = 'none');
     slides[index].style.display = 'block';
+
+    if (index === lastSlideIndex) {
+        document.querySelector('.btn-left').style.display = 'none';
+        document.querySelector('.btn-right').style.display = 'none';
+    } else {
+        document.querySelector('.btn-left').style.display = 'block';
+        document.querySelector('.btn-right').style.display = 'block';
+    }
 }
 
 function nextSlide() {
     index = (index + 1) % slides.length;
     updateSlide();
-    if (index === lastSlideIndex) {
-        document.querySelector('.btn-left').style.display = 'none';
-        document.querySelector('.btn-right').style.display = 'none';
-    }
 }
 
 function prevSlide() {
     index = (index - 1 + slides.length) % slides.length;
     updateSlide();
-    if (index !== lastSlideIndex) {
-        document.querySelector('.btn-left').style.display = 'block';
-        document.querySelector('.btn-right').style.display = 'block';
-    }
 }
+
+
+setInterval(nextSlide, intervalTime);
 
 function playMusic() {
     document.getElementById('background-music').play();
@@ -42,3 +44,7 @@ function createHeart() {
 }
 
 setInterval(createHeart, 500);
+
+
+updateSlide();
+

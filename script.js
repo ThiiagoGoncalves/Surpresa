@@ -1,7 +1,7 @@
 let index = 0;
 const slides = document.querySelectorAll('.card');
 const lastSlideIndex = slides.length - 1;
-const intervalTime = 5000; 
+const intervalTime = 6000; 
 
 function updateSlide() {
     slides.forEach(slide => slide.style.display = 'none');
@@ -47,4 +47,6 @@ setInterval(createHeart, 500);
 
 
 updateSlide();
+
+
 

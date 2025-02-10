@@ -82,12 +82,13 @@ function formatTime() {
         years--;
     }
     
-    return `${years} ano ${months} meses ${days} dias ` +
-           `${hours} horas ${minutes} minutos e ${seconds} segundos`;
+    return `<span>${years} ano ${months} meses</span>
+            <span>${days} dias ${hours} horas</span>
+            <span>${minutes} minutos ${seconds} segundos</span>`;
 }
 
 function updateTimer() {
-    document.getElementById('timer').textContent = formatTime();
+    document.getElementById('timer').innerHTML = formatTime();
 }
 
 

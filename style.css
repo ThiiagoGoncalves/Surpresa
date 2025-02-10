@@ -239,7 +239,12 @@
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+                line-height: 1.6;
+            }
+        
+            #timer span {
+                display: block;
             }
         }
+        
         

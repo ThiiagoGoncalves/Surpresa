@@ -106,7 +106,7 @@ h1:hover {
 }
 @media (max-width: 480px) {
     .container {
-        max-width: 90%; /* Reduzindo um pouco mais */
+        max-width: 80%; /* Reduzindo um pouco mais */
     }
     .card img {
         width: 100%;

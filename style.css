@@ -264,12 +264,12 @@
             .time-number {
                 font-size: 1.8em; /* Número em destaque */
                 font-weight: bold;
-                color: white;
+                color: #ff4d4d;
             }
         
             .time-label {
                 font-size: 0.8em; /* Nome pequeno abaixo */
-                color: #ddd;
+                color: #ff4d4d;
             }
         }
         

@@ -107,13 +107,15 @@ h1:hover {
 @media (max-width: 480px) {
     .special-card {
         max-width: 85%; /* Mantém um bom encaixe */
-        max-height: 60vh; /* Define a altura máxima como 60% da altura da tela */
+        max-height: 70vh; /* Define a altura máxima como 60% da altura da tela */
         padding: 10px 15px; /* Mantém um espaço interno adequado */
         margin: 15px auto; /* Centraliza e adiciona espaço externo */
         font-size: 14px; /* Ajusta o tamanho da fonte */
         line-height: 1.6; /* Mantém a leitura confortável */
         overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que a altura */
     }
+
+
 
 }
 .special-card {
@@ -128,7 +130,7 @@ h1:hover {
     text-align: center;
     width: 700px;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     

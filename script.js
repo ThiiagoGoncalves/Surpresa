@@ -90,6 +90,24 @@ function updateTimer() {
     document.getElementById('timer').textContent = formatTime();
 }
 
+
 setInterval(updateTimer, 1000);
 updateTimer();
 
+document.getElementById("start-button").addEventListener("click", function() {
+    const audio = document.getElementById("background-music");
+    audio.play().then(() => {
+      document.getElementById("start-screen").style.display = "none"; // Esconde a tela preta
+    }).catch(error => console.log("Erro ao tentar reproduzir áudio:", error));
+  });
+
+  // Adiciona efeito de hover
+  document.getElementById("start-button").addEventListener("mouseover", function() {
+    this.style.background = "#ff4d4d"; // Fundo vermelho no hover
+    this.firstElementChild.style.borderLeftColor = "#ffe6e6"; // Triângulo claro
+  });
+
+  document.getElementById("start-button").addEventListener("mouseout", function() {
+    this.style.background = "#ffe6e6"; // Volta ao fundo original
+    this.firstElementChild.style.borderLeftColor = "#ff4d4d"; // Triângulo vermelho vibrante
+  });

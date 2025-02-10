@@ -5,7 +5,7 @@
             background-color: #ffe6e6; 
             margin: 0;
             padding: 20px;
-            overflow: hidden;
+            overflow-y: scroll;
         }
         h1 {
             font-family: 'Pacifico', cursive;
@@ -13,6 +13,13 @@
             font-size: 50px;
             margin-top: 20px;
             transition: color 0.3s ease;
+        }
+        p{
+            font-family: 'Pacifico', cursive;
+            color: #ff4d4d;
+            font-size: 50px;
+            margin-top: 20px;
+            transition: color 0.3s ease; 
         }
         h1:hover {
             color: #ff1a1a; 
@@ -213,4 +220,17 @@
             100% { transform: scale(1); }
         }
 
+        #timer {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(135deg, #fcaeae, #ff2d55);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 1px;
+           
+        }
         

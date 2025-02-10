@@ -236,16 +236,30 @@
 
         @media screen and (max-width: 480px) {
             #timer {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+                gap: 10px; /* Espaçamento entre os blocos */
                 text-align: center;
-                line-height: 1.4; /* Reduz um pouco o espaçamento */
-               
             }
         
-            #timer span {
-                display: block;
+            .time-block {
+                background: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        
+            .time-number {
+                font-size: 1.8em; /* Número em destaque */
+                font-weight: bold;
+                color: white;
+            }
+        
+            .time-label {
+                font-size: 0.8em; /* Nome pequeno abaixo */
+                color: #ddd;
             }
         }
+        
         
         

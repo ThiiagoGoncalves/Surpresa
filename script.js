@@ -82,14 +82,20 @@ function formatTime() {
         years--;
     }
     
-    return `<span>${years} ano ${months} meses</span>
-            <span>${days} dias ${hours} h</span>
-            <span>${minutes} m ${seconds} s</span>`;
+    return `
+        <div class="time-block"><div class="time-number">${years}</div><div class="time-label">Ano</div></div>
+        <div class="time-block"><div class="time-number">${hours}</div><div class="time-label">Horas</div></div>
+        <div class="time-block"><div class="time-number">${months}</div><div class="time-label">Meses</div></div>
+        <div class="time-block"><div class="time-number">${days}</div><div class="time-label">Dias</div></div>
+        <div class="time-block"><div class="time-number">${minutes}</div><div class="time-label">Minutos</div></div>
+        <div class="time-block"><div class="time-number">${seconds}</div><div class="time-label">Segundos</div></div>
+    `;
 }
 
 function updateTimer() {
     document.getElementById('timer').innerHTML = formatTime();
 }
+
 
 
 setInterval(updateTimer, 1000);

@@ -118,3 +118,31 @@ document.getElementById("start-button").addEventListener("click", function() {
     this.style.background = "#ffe6e6"; // Volta ao fundo original
     this.firstElementChild.style.borderLeftColor = "#ff4d4d"; // Triângulo vermelho vibrante
   });
+
+
+  let touchStartX = 0;
+let touchEndX = 0;
+
+const slider = document.querySelector('.container'); // Seleciona o contêiner do slider
+
+// Captura o início do toque
+slider.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+});
+
+// Captura o fim do toque e decide a direção do swipe
+slider.addEventListener('touchend', (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+// Função que identifica a direção do swipe
+function handleSwipe() {
+    const swipeThreshold = 50; // Distância mínima para considerar um swipe
+
+    if (touchStartX - touchEndX > swipeThreshold) {
+        nextSlide(); // Swipe para a esquerda → Próxima imagem
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+        prevSlide(); // Swipe para a direita → Imagem anterior
+    }
+}

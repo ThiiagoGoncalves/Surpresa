@@ -9,7 +9,7 @@ body {
 h1 {
     font-family: 'Pacifico', cursive;
     color: #ff4d4d;
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 20px;
     transition: color 0.3s ease;
 }
@@ -57,7 +57,12 @@ h1:hover {
 .btn:hover {
     background-color: #ff1a1a; 
 }
-
+.btn-left {
+    left: -40px;
+}
+.btn-right {
+    right: -40px;
+}
 .music-btn {
     position: absolute;
     top: 10px;
@@ -99,17 +104,17 @@ h1:hover {
         opacity: 1;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .container {
-        max-width: 95%;
+        max-width: 90%; /* Reduzindo um pouco mais */
     }
     .card img {
         width: 100%;
-        max-height: 100%;
+        max-height: 80%; /* Ajuste se necessário */
     }
     .btn {
-        font-size: 16px;
-        padding: 8px;
+        font-size: 14px; /* Diminuindo o tamanho do botão */
+        padding: 6px;
     }
 }
 .special-card {
@@ -117,13 +122,12 @@ h1:hover {
     background-color: #fff1f1;
     border: 2px dashed #ff4d4d;
     padding: 15px;
-    font-size: 18px;
+    font-size: 19px;
     color: #333;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
     text-align: center;
-    width: 90%;
-    max-width: 600px;
+    width: 700px;
     position: absolute;
     top: 55%;
     left: 50%;

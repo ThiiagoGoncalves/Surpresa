@@ -83,8 +83,8 @@ function formatTime() {
     }
     
     return `<span>${years} ano ${months} meses</span>
-            <span>${days} dias ${hours} horas</span>
-            <span>${minutes} minutos ${seconds} segundos</span>`;
+            <span>${days} dias ${hours} h</span>
+            <span>${minutes} m ${seconds} s</span>`;
 }
 
 function updateTimer() {

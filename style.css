@@ -239,7 +239,8 @@
                 display: flex;
                 flex-direction: column;
                 text-align: center;
-                line-height: 1.6;
+                line-height: 1.4; /* Reduz um pouco o espaçamento */
+                font-size: 0.9em; /* Diminui a fonte para evitar quebras */
             }
         
             #timer span {

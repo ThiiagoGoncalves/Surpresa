@@ -105,9 +105,13 @@ h1:hover {
     }
 }
 @media (max-width: 480px) {
-   .special-card{
-    max-width: 80%;
-   }
+    .special-card {
+        max-width: 90%;  /* Aumenta a largura para melhor encaixe */
+        padding: 15px;  /* Garante espaçamento interno para melhor leitura */
+        margin: 10px auto; /* Centraliza e adiciona respiro nas laterais */
+        font-size: 14px; /* Reduz um pouco a fonte para melhor ajuste */
+        line-height: 1.6; /* Melhora a legibilidade do texto */
+    }
 }
 .special-card {
     font-family: 'Dancing Script', cursive;

@@ -105,17 +105,9 @@ h1:hover {
     }
 }
 @media (max-width: 480px) {
-    .container {
-        max-width: 80%; /* Reduzindo um pouco mais */
-    }
-    .card img {
-        width: 100%;
-        max-height: 80%; /* Ajuste se necessário */
-    }
-    .btn {
-        font-size: 14px; /* Diminuindo o tamanho do botão */
-        padding: 6px;
-    }
+   .special-card{
+    max-width: 80%;
+   }
 }
 .special-card {
     font-family: 'Dancing Script', cursive;

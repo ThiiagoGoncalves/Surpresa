@@ -1,32 +1,47 @@
+//Cards
 let index = 0;
 const slides = document.querySelectorAll('.card');
 const lastSlideIndex = slides.length - 1;
-const intervalTime = 6000; 
+const intervalTime = 8000; 
 
 function updateSlide() {
     slides.forEach(slide => slide.style.display = 'none');
     slides[index].style.display = 'block';
 
-    if (index === lastSlideIndex) {
-        document.querySelector('.btn-left').style.display = 'none';
-        document.querySelector('.btn-right').style.display = 'none';
-    } else {
-        document.querySelector('.btn-left').style.display = 'block';
-        document.querySelector('.btn-right').style.display = 'block';
-    }
+    document.querySelector('.btn-left').style.display = 'block';
+    document.querySelector('.btn-right').style.display = 'block';
 }
-
 function nextSlide() {
     index = (index + 1) % slides.length;
     updateSlide();
 }
-
 function prevSlide() {
     index = (index - 1 + slides.length) % slides.length;
     updateSlide();
 }
 
+//Swipe Cards
+let touchStartX = 0;
+let touchEndX = 0;
+const slider = document.querySelector('.container'); 
+slider.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+});
+slider.addEventListener('touchend', (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    handleSwipe();
+});
+function handleSwipe() {
+    const swipeThreshold = 50; 
 
+    if (touchStartX - touchEndX > swipeThreshold) {
+        nextSlide(); 
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+        prevSlide();
+    }
+}
+
+//Corações
 setInterval(nextSlide, intervalTime);
 
 function playMusic() {
@@ -42,13 +57,10 @@ function createHeart() {
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 5000);
 }
-
 setInterval(createHeart, 500);
-
-
 updateSlide();
 
-
+//Contador
 function formatTime() {
     const startDate = new Date('2024-02-26T00:00:00');
     const now = new Date();
@@ -84,9 +96,9 @@ function formatTime() {
     
     return `
         <div class="time-block"><div class="time-number">${years}</div><div class="time-label">Ano</div></div>
-        <div class="time-block"><div class="time-number">${hours}</div><div class="time-label">Horas</div></div>
         <div class="time-block"><div class="time-number">${months}</div><div class="time-label">Meses</div></div>
         <div class="time-block"><div class="time-number">${days}</div><div class="time-label">Dias</div></div>
+        <div class="time-block"><div class="time-number">${hours}</div><div class="time-label">Horas</div></div>
         <div class="time-block"><div class="time-number">${minutes}</div><div class="time-label">Minutos</div></div>
         <div class="time-block"><div class="time-number">${seconds}</div><div class="time-label">Segundos</div></div>
     `;
@@ -96,53 +108,25 @@ function updateTimer() {
     document.getElementById('timer').innerHTML = formatTime();
 }
 
-
-
+//Tela de Inicio "PlayMe"
 setInterval(updateTimer, 1000);
 updateTimer();
 
 document.getElementById("start-button").addEventListener("click", function() {
     const audio = document.getElementById("background-music");
     audio.play().then(() => {
-      document.getElementById("start-screen").style.display = "none"; // Esconde a tela preta
+      document.getElementById("start-screen").style.display = "none";
     }).catch(error => console.log("Erro ao tentar reproduzir áudio:", error));
   });
 
-  // Adiciona efeito de hover
   document.getElementById("start-button").addEventListener("mouseover", function() {
-    this.style.background = "#ff4d4d"; // Fundo vermelho no hover
-    this.firstElementChild.style.borderLeftColor = "#ffe6e6"; // Triângulo claro
+    this.style.background = "#ff4d4d";
+    this.firstElementChild.style.borderLeftColor = "#ffe6e6";
   });
 
   document.getElementById("start-button").addEventListener("mouseout", function() {
-    this.style.background = "#ffe6e6"; // Volta ao fundo original
-    this.firstElementChild.style.borderLeftColor = "#ff4d4d"; // Triângulo vermelho vibrante
+    this.style.background = "#ffe6e6";
+    this.firstElementChild.style.borderLeftColor = "#ff4d4d";
   });
 
 
-  let touchStartX = 0;
-let touchEndX = 0;
-
-const slider = document.querySelector('.container'); // Seleciona o contêiner do slider
-
-// Captura o início do toque
-slider.addEventListener('touchstart', (event) => {
-    touchStartX = event.touches[0].clientX;
-});
-
-// Captura o fim do toque e decide a direção do swipe
-slider.addEventListener('touchend', (event) => {
-    touchEndX = event.changedTouches[0].clientX;
-    handleSwipe();
-});
-
-// Função que identifica a direção do swipe
-function handleSwipe() {
-    const swipeThreshold = 50; // Distância mínima para considerar um swipe
-
-    if (touchStartX - touchEndX > swipeThreshold) {
-        nextSlide(); // Swipe para a esquerda → Próxima imagem
-    } else if (touchEndX - touchStartX > swipeThreshold) {
-        prevSlide(); // Swipe para a direita → Imagem anterior
-    }
-}

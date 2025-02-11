@@ -6,8 +6,17 @@
             margin: 0;
             padding: 20px;
             overflow-y: scroll;
+            overflow-x: hidden;
+            
         }
         h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff4d4d;
+            font-size: 50px;
+            margin-top: 20px;
+            transition: color 0.3s ease;
+        }
+        h2 {
             font-family: 'Pacifico', cursive;
             color: #ff4d4d;
             font-size: 50px;
@@ -45,7 +54,6 @@
             object-fit: cover; 
             border-radius: 10px;
         }
-        
         .description {
             margin-top: 10px;
             font-size: 16px;
@@ -62,6 +70,7 @@
             cursor: pointer;
             font-size: 20px;
             transition: background-color 0.3s ease;
+            border-radius: 80px;
         }
         .btn:hover {
             background-color: #ff1a1a; 
@@ -71,18 +80,6 @@
         }
         .btn-right {
             right: -40px;
-        }
-        .music-btn {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
         }
         .heart {
             position: absolute;
@@ -94,6 +91,55 @@
             animation-duration: 5s, 0.5s;
             animation-timing-function: linear, ease-in-out;
             animation-delay: 0s, 2s;
+        }
+        #timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            text-align: center;
+        }
+        .time-block {
+            background: rgba(207, 2, 2, 0.1); 
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            min-width: 80px;
+        }
+        .time-number {
+            font-size: 2em; 
+            font-weight: bold;
+            color: #ff4d4d;
+        }
+        .time-label {
+            font-size: 0.9em; 
+            color: #ff4d4d;
+        }
+        @media screen and (max-width: 480px) {
+            #timer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px; 
+                text-align: center;
+            }
+        
+            .time-block {
+                background: rgba(207, 2, 2, 0.1); 
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+        
+            .time-number {
+                font-size: 1.8em; 
+                font-weight: bold;
+                color: #ff4d4d;
+            }
+        
+            .time-label {
+                font-size: 0.8em; 
+                color: #ff4d4d;
+                
+            }
         }
         @keyframes float {
             0% {
@@ -115,163 +161,20 @@
         }
         @media (max-width: 480px) {
             .container {
-                max-width: 90%; /* Reduzindo um pouco mais */
+                max-width: 90%; 
             }
             .card img {
                 width: 100%;
-                max-height: 80%; /* Ajuste se necessário */
+                max-height: 80%; 
             }
             .btn {
-                font-size: 14px; /* Diminuindo o tamanho do botão */
+                font-size: 14px; 
                 padding: 6px;
             }
         }
-        .special-card {
-        background-color: #fff1f1;
-        border: 2px dashed #ff4d4d;
-        padding: 15px;
-        font-size: 18px;
-        color: #333;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 700px;
-        position: absolute;
-        top: 55%;
-        right: 1px;
-        }
-
-        .special-card:hover {
-            transform: scale(1.05);
-        }
-        .special-card p {
-            line-height: 1.6;
-            margin: 0; 
-        }
-        .special-card .signature {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 30px;
-            text-align: center; 
-        }
-        .surprise-container {
-            text-align: center;
-            margin-top: 15px;
-        }
-        
-        .surprise-link {
-            display: inline-block;
-            font-size: 22px;
-            color: #ff4d4d;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #fff1f1;
-            padding: 12px 24px;
-            border-radius: 12px;
-            transition:  0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .surprise-link:hover {
-            background-color: #ff4d4d;
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        .fixed-button {
-            position: fixed;
-            bottom: 15px;
-            right: 15px;
-            font-size: 14px; 
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #ff4d4d;
-            padding: 8px; 
-            border-radius: 50%;
-            transition:  0.3s ease, transform 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .fixed-button:hover {
-            background-color: #ff1a1a;
-            transform: scale(1.1);
-        }
-        
-        .music-btn {
-            background: linear-gradient(45deg, #ff4d4d, #ff9999);
-            border-radius: 15px;
-            font-size: 20px;
-            padding: 10px 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-        .music-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .surprise-link {
-            animation: pulse 1.5s infinite;
-        }
-        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-
-        #timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px; /* Espaço entre os blocos */
-            text-align: center;
-        }
-        
-        .time-block {
-            background: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
-            padding: 12px 16px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            min-width: 80px;
-        }
-        
-        .time-number {
-            font-size: 2em; /* Destaque maior no desktop */
-            font-weight: bold;
-            color: #ff4d4d;
-        }
-        
-        .time-label {
-            font-size: 0.9em; /* Nome um pouco maior no desktop */
-            color: #ff4d4d;
-        }
-
-        @media screen and (max-width: 480px) {
-            #timer {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-                gap: 10px; /* Espaçamento entre os blocos */
-                text-align: center;
-            }
-        
-            .time-block {
-                background: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
-                padding: 10px;
-                border-radius: 8px;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            }
-        
-            .time-number {
-                font-size: 1.8em; /* Número em destaque */
-                font-weight: bold;
-                color: #ff4d4d;
-            }
-        
-            .time-label {
-                font-size: 0.8em; /* Nome pequeno abaixo */
-                color: #ff4d4d;
-            }
-        }
-        
-        
         

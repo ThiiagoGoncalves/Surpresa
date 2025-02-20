@@ -57,7 +57,7 @@ function createHeart() {
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 20000);
 }
-setInterval(createHeart, 250);
+setInterval(createHeart, 350);
 updateSlide();
 
 //Contador

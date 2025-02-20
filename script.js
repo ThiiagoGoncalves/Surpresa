@@ -53,11 +53,11 @@ function createHeart() {
     heart.classList.add('heart');
     heart.innerHTML = '❤️';
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
     document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
+    setTimeout(() => heart.remove(), 20000);
 }
-setInterval(createHeart, 500);
+setInterval(createHeart, 250);
 updateSlide();
 
 //Contador
